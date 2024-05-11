@@ -6,10 +6,6 @@ on:
       - master
       - develop
       - zmq_test
-  paths:
-    - 'src/**'
-    - '.github/workflows/test.yml'
-    - 'main.go'
 
 jobs:
   check-code-and-deploy-go:

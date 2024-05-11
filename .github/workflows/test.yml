@@ -24,7 +24,7 @@ jobs:
       - name: print go version
         run: go version
       - name: Run tests
-        run: go test -v src/       
+        run: go test -v src/main_test.go       
   build:
       runs-on: ubuntu-latest
       steps:

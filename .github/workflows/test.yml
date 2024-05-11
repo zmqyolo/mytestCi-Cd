@@ -1,8 +1,7 @@
-#自动化测试流程
 name: my first CI/CD
 
 on: 
-  push:        //master 、develop 、zmqtest 分支有push操作时触发
+  push:        
     branches:
       - master
       - develop
@@ -13,19 +12,19 @@ on:
     - 'main.go'
 
 jobs:
-   check-code-and-deploy-go:
+  check-code-and-deploy-go:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4    //git pull 拉取代码
+        uses: actions/checkout@v4    
       - name: Set up Go
-        uses: actions/setup-go@v4    //安装go环境
+        uses: actions/setup-go@v4    
         with:
-          go-version: '1.20'        //run 运行一个go的版本命令
+          go-version: '1.20'        
       - name: print go version
         run: go version
       - name: Run tests
-        run: go test -v src/       //运行测试
+        run: go test -v src/       
     build:
       runs-on: ubuntu-latest
       steps:
@@ -33,4 +32,3 @@ jobs:
           run: go build -o myapp src/main.go
         - name: Run
           run: ./myapp
-

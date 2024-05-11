@@ -1,0 +1,54 @@
+name: my first CI/CD
+
+on: 
+  push:
+    branches:
+      - master
+      - develop
+      - zmq_test
+      - main
+    #paths:
+    #  - 'src/**'
+    # - '.github/workflows/test.yml'
+
+
+jobs:
+
+  deploy_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4    
+      - name: Set up Go
+        uses: actions/setup-go@v4    
+        with:
+          go-version-file: 'go.mod'    
+          #go-version: '1.20' 
+      - name: print go version
+        run: go version
+      - name: Run tests
+        run: go test -v  ./...    
+  
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Set up Go
+          uses: actions/setup-go@v4
+          with:
+            go-version-file: './go.mod'     
+        - name: Build
+          run: go build -v -o ./src/myapp  ./src/main.go
+        - name: Run
+          run: src/myapp
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output
+        run: echo "Hello, World!"
+  output2:                              #输出当前目录下的所有文件
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output2
+        run: echo `pwd`

@@ -1,0 +1,24 @@
+name: output test
+
+on: 
+  push:
+    branches:
+      - master
+      - develop
+      - zmq_test
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/test.yml'
+
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output
+        run: echo "Hello, World!"
+  output2:                              #输出当前目录下的所有文件
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output2
+        run: echo `pwd`

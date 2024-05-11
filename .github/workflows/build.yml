@@ -12,6 +12,7 @@ on:
       - '.github/workflows/test.yml'
 
 jobs:
+
   deploy_go:
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +26,7 @@ jobs:
         run: go version
       - name: Run tests
         run: go test -v  ./...    
+  
   build:
       runs-on: ubuntu-latest
       steps:
@@ -46,3 +48,8 @@ jobs:
     steps:
       - name: Output2
         run: echo `pwd`
+  output3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output3
+        run: echo `ls -l ./`

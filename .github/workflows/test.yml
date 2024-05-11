@@ -29,9 +29,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Build
-          run: go build -o myapp src/main.go
+          run: go build -o src/myapp src/main.go
         - name: Run
-          run: ./myapp
+          run: ./src/myapp
   output:
     runs-on: ubuntu-latest
     steps:

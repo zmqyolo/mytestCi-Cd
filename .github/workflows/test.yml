@@ -1,6 +1,6 @@
 name: my first CI/CD
 
-on:
+on: 
   push:
     branches:
       - master

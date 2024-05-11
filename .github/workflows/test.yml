@@ -24,12 +24,12 @@ jobs:
       - name: print go version
         run: go version
       - name: Run tests
-        run: go test -v  src/main_test.go       
+        run: go test -v  ./src/main_test.go       
   build:
       runs-on: ubuntu-latest
       steps:
         - name: Build
-          run: go build -o src/myapp src/main.go
+          run: go build -o ./src/myapp  ./src/main.go
         - name: Run
           run: ./src/myapp
   output:

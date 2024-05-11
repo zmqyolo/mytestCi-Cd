@@ -7,9 +7,9 @@ on:
       - develop
       - zmq_test
       - main
-    #paths:
-    #  - 'src/**'
-    #  - '.github/workflows/test.yml'
+    paths:
+      - 'src/**'
+      - '.github/workflows/test.yml'
 
 
 jobs:

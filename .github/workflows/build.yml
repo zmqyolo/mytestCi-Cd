@@ -34,8 +34,8 @@ jobs:
       steps:
         - name: List files
           run: echo `ls -l ./`
-        #- name: gomod
-        #  run: go mod tidy
+        - name: gomod
+          run: go mod tidy
         - name: Build
           run: go build -v -o ./src/myapp  ./src/main.go
         - name: Run

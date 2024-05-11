@@ -24,7 +24,7 @@ jobs:
       - name: print go version
         run: go version
       - name: Run tests
-        run: go test -v src/main_test.go       
+        run: go test -v  src/main_test.go       
   build:
       runs-on: ubuntu-latest
       steps:
@@ -37,3 +37,8 @@ jobs:
     steps:
       - name: Output
         run: echo "Hello, World!"
+  output2: #输出当前目录下的所有文件
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output2
+        run: ls -al

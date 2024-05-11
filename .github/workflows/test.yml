@@ -28,10 +28,10 @@ jobs:
   build:
       runs-on: ubuntu-latest
       steps:
-        - name: Build
-          run: go build -o ./src/myapp  ./src/main.go
         - name: List files
           run: echo `ls -l ./`
+        - name: Build
+          run: go build -o ./src/myapp  ./src/main.go
         - name: Run
           run: ./src/myapp
   output:

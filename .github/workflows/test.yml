@@ -8,7 +8,7 @@ on:
       - zmq_test
 
 
-      
+
 jobs:
   check-code-and-deploy-go:
     runs-on: ubuntu-latest
@@ -30,3 +30,8 @@ jobs:
           run: go build -o myapp src/main.go
         - name: Run
           run: ./myapp
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output
+        run: echo "Hello, World!"

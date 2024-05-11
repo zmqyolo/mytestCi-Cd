@@ -41,4 +41,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output2
-        run: ls -al
+        run: echo `pwd`
